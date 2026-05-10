@@ -53,4 +53,21 @@ public void StudentFormTest() throws InterruptedException {
         addStudent.click();
     }
 
+    @Test
+    public void searchTest() throws InterruptedException {
+
+        WebElement address = driver.findElement(By.name("search"));
+        address.sendKeys("Randun");
+        Thread.sleep(3000);
+
+        WebElement search=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/form/button"));
+        search.click();
+        Thread.sleep(3000);
+
+        WebElement clear=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/form/a"));
+        clear.click();
+    }
+
+
+
 }
