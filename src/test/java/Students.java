@@ -68,6 +68,22 @@ public void StudentFormTest() throws InterruptedException {
         clear.click();
     }
 
+    @Test
+    public void buttonTest() throws InterruptedException {
+
+        Thread.sleep(3000);
+        WebElement toggle=driver.findElement(By.xpath("(//a[@class='btn btn-warning btn-sm'][normalize-space()='Toggle'])[3]"));
+        toggle.click();
+        Thread.sleep(3000);
+
+        WebElement del=driver.findElement(By.xpath("(//a[contains(text(),'Del')])[4]"));
+        del.click();
+        driver.switchTo().alert().accept();
+
+
+    }
+
+
 
 
 }
