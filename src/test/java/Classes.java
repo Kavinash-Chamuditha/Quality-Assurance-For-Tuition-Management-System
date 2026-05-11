@@ -20,7 +20,7 @@ import java.util.List;
         }
 
         @Test
-        public void StudentFormTest() throws InterruptedException {
+        public void addClassTest() throws InterruptedException {
             WebElement fullName = driver.findElement(By.name("class_name"));
             fullName.sendKeys("Science Grade 8");
             Thread.sleep(3000);
