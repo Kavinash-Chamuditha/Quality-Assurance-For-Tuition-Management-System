@@ -76,4 +76,21 @@ public class Enrollments {
         WebElement clear=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/form/a"));
         clear.click();
     }
+
+    @Test
+    public void buttonTest() throws InterruptedException {
+
+        Thread.sleep(3000);
+        WebElement pay=driver.findElement(By.xpath("(//a[contains(text(),'Pay')])[1]"));
+        pay.click();
+        Thread.sleep(3000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+
+        WebElement del=driver.findElement(By.xpath("(//a[contains(text(),'Del')])[3]"));
+        del.click();
+        driver.switchTo().alert().accept();
+
+
+    }
 }
