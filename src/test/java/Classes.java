@@ -62,7 +62,17 @@ import java.util.List;
             addStudent.click();
         }
 
+        @Test
+        public void buttonTest() throws InterruptedException {
 
+            Thread.sleep(3000);
+            WebElement del=driver.findElement(By.xpath("(//a[@class='btn btn-danger btn-sm'][normalize-space()='Del'])[1]"));
+            del.click();
+            Thread.sleep(3000);
+            driver.switchTo().alert().accept();
+
+
+        }
 
 
 
