@@ -11,16 +11,16 @@ public class Teachers {
 
     WebDriver driver;
 
-        @Test
-        public void OpenTestPage(){
+    @BeforeMethod
+    public void OpenTestPage(){
             driver =  new ChromeDriver();
             driver.manage().window().maximize();
             driver.get("http://localhost:3000/teachers.php");
-        }
+    }
 
 
-        @Test
-        public void addTeacherTest() throws InterruptedException {
+    @Test
+    public void addTeacherTest() throws InterruptedException {
 
             WebElement fullName = driver.findElement(By.name("full_name"));
             fullName.sendKeys("Kosala Pushpakumara");
@@ -54,6 +54,18 @@ public class Teachers {
             addStudent.click();
 
         }
+
+    @Test
+    public void buttonTest() throws InterruptedException {
+
+        Thread.sleep(3000);
+        WebElement del=driver.findElement(By.xpath("(//a[@class='btn btn-danger btn-sm'][normalize-space()='Del'])[2]"));
+        del.click();
+        Thread.sleep(3000);
+        driver.switchTo().alert().accept();
+
+
+    }
 
 
     }
