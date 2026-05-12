@@ -59,4 +59,28 @@ public class Payments {
         pay.click();
     }
 
+    @Test
+    public void Test_Recent_Payment_History_Table(){
+        int rowCount = driver.findElements(
+                By.xpath("/html/body/div[2]/div[2]/div[2]/table/tbody/tr")).size();
+        System.out.println("Rows count is: " + rowCount);
+
+
+        int columnCount = driver.findElements(
+                By.xpath("/html/body/div[2]/div[2]/div[2]/table/thead/tr/th")).size();
+        System.out.println("Column count is: " + columnCount);
+
+
+        String value=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[3]")).getText();
+        System.out.println("Specified row/column data" +value);
+
+        for(int i=1; i<=rowCount; i++){
+            for(int j=1; j<columnCount; j++){
+                String tdata=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/table/tbody/tr["+i+"]/td["+j+"]")).getText();
+                System.out.print(tdata + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
