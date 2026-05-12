@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,12 +9,14 @@ import org.testng.annotations.Test;
 public class Reports {
 
     WebDriver driver;
+    JavascriptExecutor jsExecutor;
 
     @BeforeMethod
     public void OpenTestPage(){
         driver =  new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://localhost:3000/reports.php");
+        jsExecutor = (JavascriptExecutor) driver;
     }
 
     @Test
@@ -23,11 +26,19 @@ public class Reports {
         WebElement databaseView=driver.findElement(By.xpath("//a[contains(text(),'\uD83D\uDDC2\uFE0F Database Views')]"));
         databaseView.click();
         Thread.sleep(3000);
-        driver.navigate().back();
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        Thread.sleep(2000);
+        jsExecutor.executeScript("window.scrollTo(0,0)");
+        Thread.sleep(3000);
+
 
         Thread.sleep(3000);
         WebElement biQuaries=driver.findElement(By.xpath("//a[contains(text(),'\uD83D\uDCC8 BI Queries')]"));
         biQuaries.click();
+        Thread.sleep(3000);
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        Thread.sleep(2000);
+        jsExecutor.executeScript("window.scrollTo(0,0)");
         Thread.sleep(3000);
         driver.navigate().back();
 
