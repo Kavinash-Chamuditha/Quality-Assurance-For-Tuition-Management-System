@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class Reports {
 
     WebDriver driver;
@@ -46,13 +48,27 @@ public class Reports {
         WebElement stReport=driver.findElement(By.xpath("//a[contains(text(),'\uD83C\uDF93 Student Report (Cursor)')]"));
         stReport.click();
         Thread.sleep(3000);
+
+        WebElement dropDown1 = driver.findElement(By.name("student_id"));
+        dropDown1.click();
+        List<WebElement> options1 = dropDown1.findElements(By.tagName("option"));
+        for (WebElement element : options1) {
+            String dropDownValue = element.getText();
+            if (dropDownValue.equals("Randun Gayantha (Grade 13)")) {
+                element.click();
+                break;
+            }
+        }
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("/html/body/div[2]/div[3]/form/button")).click();
+        Thread.sleep(3000);
         driver.navigate().back();
 
         Thread.sleep(3000);
         WebElement revenue=driver.findElement(By.xpath("//a[contains(text(),'\uD83D\uDCB0 Revenue')]"));
         revenue.click();
         Thread.sleep(3000);
-        driver.navigate().back();
+
 
 
 
