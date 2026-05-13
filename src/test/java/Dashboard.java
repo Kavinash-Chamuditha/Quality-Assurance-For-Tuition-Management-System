@@ -48,4 +48,22 @@ public class Dashboard {
 
 
     }
+
+@Test
+    public void recent_enrollmentTableTest(){
+
+        int rowCount = driver.findElements(
+                By.xpath("/html/body/div[2]/div[3]/div[1]/table/tbody/tr")).size();
+        System.out.println("Rows count is: " + rowCount);
+
+
+        int columnCount = driver.findElements(
+                By.xpath("/html/body/div[2]/div[3]/div[1]/table/thead/tr/th")).size();
+        System.out.println("Column count is: " + columnCount);
+
+
+        String value=driver.findElement(By.xpath("/html/body/div[2]/div[3]/div[1]/table/tbody/tr[3]")).getText();
+        System.out.println("Specified row/column data" +value);
+
+    }
 }
