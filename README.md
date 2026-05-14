@@ -22,73 +22,71 @@ Quality-Assurance-For-Tuition-Management-System/
 ├── README.md
 
 ├── Manual-Testing/
-│ ├── Test-Cases/
-│ ├── Bug-Reports/
-│ └── Screenshots/
-│     ├── bug001.png
-│     ├── bug002.png
-│     └── bug003.png
+│   ├── Test-Cases/
+│   │   ├── Test Cases Sheet.pdf
+│   ├── Bug-Reports/
+│   │   ├── Bug Reports Sheet.pdf
+│   └── Screenshots/
+│       ├── bug001.png
+│       ├── bug002.png
+│       └── bug003.png
 
 ├── Automation-Testing/
-│ ├── src/test/java/
-│ │ ├── Students.java
-│ │ ├── Teachers.java
-│ │ ├── Classes.java
-│ │ ├── Enrollments.java
-│ │ ├── Payments.java
-│ │ ├── Dashboard.java
-│ │ ├── Reports.java
-│ │ └── Activity.java
-│ ├── pom.xml
+│   ├── src/test/java/
+│   │   ├── Students.java
+│   │   ├── Teachers.java
+│   │   ├── Classes.java
+│   │   ├── Enrollments.java
+│   │   ├── Payments.java
+│   │   ├── Dashboard.java
+│   │   ├── Reports.java
+│   │   └── Activity.java
+│   └── pom.xml
 ```
 
 ---
 
 # 🧪 Manual Testing Scope
 
-The manual testing process covers:
-
 ## 👨‍🎓 Student Management
 - ➕ Add Student
-- ✏️ Update Student
+- 🚫 Duplicate Student Validation
 - ❌ Delete Student
-- 🔍 Search Student
-- ✔️ Validation Checks
+- 🔍 Search Validation
+- 🔄 Toggle Student Status
 
 ## 👨‍🏫 Teacher Management
 - ➕ Add Teacher
-- ✏️ Edit Teacher
-- ❌ Delete Teacher
-- ✔️ Validation Checks
+- ❌ Delete Teacher Validation
 
 ## 🏫 Class Management
 - ➕ Add Class
-- ✏️ Edit Class
-- 🔄 Deactivate Class
-- ✔️ Validation Checks
+- 🔄 Class Deactivation Validation
 
 ## 📚 Enrollment Management
-- ✔️ Student Enrollment Validation
-- 🚫 Duplicate Prevention
+- ➕ Add Enrollment
 - 🔍 Enrollment Search
+- 🧹 Filter Clear Validation
+- 💳 Payment Navigation Validation
+- ❌ Delete Enrollment
 
 ## 💳 Payment Management
-- ➕ Add Payment
+- ➕ Record Payment
 - 📜 Payment History Validation
-- ✔️ Payment Status Verification
+- 💰 Payment Total Verification
 
 ## 📊 Dashboard Validation
-- 📈 Statistics Verification
-- ✔️ Data Accuracy Validation
+- 📈 Statistics Card Verification
+- 🔗 Navigation Button Validation
 
 ## 📑 Reports Validation
 - 📄 Report Generation
-- 🔍 Data Filtering
-- ✔️ Record Accuracy
+- 💰 Revenue Data Verification
+- ✔️ Database Accuracy Validation
 
 ## 🕒 Activity Log Validation
-- 📌 Action Tracking Verification
-- ✔️ Log Accuracy Validation
+- 📌 Student Insert Activity Logging
+- 📌 Enrollment Insert Activity Logging
 
 ---
 
